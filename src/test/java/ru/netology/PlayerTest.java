@@ -53,4 +53,24 @@ public class PlayerTest {
         int actual = player.sumGenre(game.getGenre());
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void sumGenreGames() {
+        GameStore store = new GameStore();
+        Game game = store.publishGame("Syberia", "Quest");
+        Game game1 = store.publishGame("Syberia 2", "Quest");
+        Game game3 = store.publishGame("Portal", "Adventure");
+
+        Player player = new Player("Evgenia");
+        player.installGame(game);
+        player.installGame(game1);
+        player.installGame(game3);
+        player.play(game, 2);
+        player.play(game1, 2);
+        player.play(game3, 1);
+
+        int expected = 4;
+        int actual = player.sumGenre("Quest");
+        assertEquals(expected, actual);
+    }
 }

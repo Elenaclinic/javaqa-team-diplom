@@ -19,7 +19,7 @@ public class Player {
         return name;
     }
 
-    /** добавление игры игроку
+    /** + добавление игры игроку
     если игра уже была, никаких изменений происходить не должно */
     public void installGame(Game game) {
         playedTime.put(game, 0);
@@ -40,7 +40,7 @@ public class Player {
         return playedTime.get(game);
     }
 
-    /** Метод принимает жанр игры (одно из полей объекта игры) и
+    /** + Метод принимает жанр игры (одно из полей объекта игры) и
      суммирует время, проигранное во все игры этого жанра этим игроком */
     public int sumGenre(String genre) {
         int sum = 0;
