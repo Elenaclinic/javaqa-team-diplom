@@ -36,4 +36,21 @@ public class PlayerTest {
 
         });
     }
+
+    @Test
+    public void addGameDouble() {
+        GameStore store = new GameStore();
+        Game game = store.publishGame("Syberia", "Quest");
+        Game game1 = store.publishGame("Syberia 2", "Quest");
+        Game game3 = store.publishGame("Portal", "Adventure");
+
+        Player player = new Player("Evgenia");
+        player.installGame(game);
+        player.play(game, 1);
+        player.installGame(game);
+
+        int expected = 1;
+        int actual = player.sumGenre(game.getGenre());
+        assertEquals(expected, actual);
+    }
 }
