@@ -20,4 +20,20 @@ public class PlayerTest {
     }
 
     // другие ваши тесты
+    @Test
+    public void shouldRunTimeException() {
+        GameStore store = new GameStore();
+        Game game = store.publishGame("Syberia", "Quest");
+        Game game1 = store.publishGame("Syberia 2", "Quest");
+        Game game3 = store.publishGame("Portal", "Adventure");
+
+        Player player = new Player("Evgenia");
+        player.installGame(game);
+
+
+        assertThrows(RuntimeException.class, () -> {
+            player.play(game1, 1);
+
+        });
+    }
 }
