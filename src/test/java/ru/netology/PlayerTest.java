@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class PlayerTest {
 
-    @Test
+    @Test //1
     public void shouldSumGenreIfOneGame() {
         GameStore store = new GameStore();
         Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
@@ -22,7 +22,7 @@ public class PlayerTest {
     }
 
     // другие ваши тесты
-    @Test
+    @Test //3
     public void shouldRunTimeException() {
         GameStore store = new GameStore();
         Game game = store.publishGame("Syberia", "Quest");
@@ -39,7 +39,7 @@ public class PlayerTest {
         });
     }
 
-    @Test
+    @Test //2
     public void addGameDouble() {
         GameStore store = new GameStore();
         Game game = store.publishGame("Syberia", "Quest");
@@ -56,7 +56,7 @@ public class PlayerTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+    @Test //4
     public void sumGenreGames() {
         GameStore store = new GameStore();
         Game game = store.publishGame("Syberia", "Quest");
@@ -76,7 +76,7 @@ public class PlayerTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+    @Test //5
     public void playerByGenre() {
         GameStore store = new GameStore();
         Game game = store.publishGame("Syberia", "Quest");
@@ -95,4 +95,6 @@ public class PlayerTest {
         String actual = player.mostPlayerByGenre("Quest").getTitle();
         assertEquals(expected, actual);
     }
+
+
 }
