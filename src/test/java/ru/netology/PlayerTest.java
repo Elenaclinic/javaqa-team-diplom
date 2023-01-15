@@ -95,6 +95,4 @@ public class PlayerTest {
         String actual = player.mostPlayerByGenre("Quest").getTitle();
         assertEquals(expected, actual);
     }
-
-
 }
